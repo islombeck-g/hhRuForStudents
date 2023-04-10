@@ -9,6 +9,7 @@ struct enterView_02_03: View {
     @Binding public var userAgreement:Bool
     @Binding public var userMailingAccess:Bool 
 
+    
     var body: some View {
         GeometryReader{geometry in
             VStack{

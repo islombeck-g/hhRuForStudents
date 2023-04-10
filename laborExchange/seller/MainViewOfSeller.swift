@@ -6,7 +6,6 @@ struct MainViewOfSeller: View {
         VStack{
             Text("MainOfSeller")
         }
-    
     }
 }
 

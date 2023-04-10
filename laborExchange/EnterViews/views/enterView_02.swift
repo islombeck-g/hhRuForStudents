@@ -5,7 +5,7 @@ import SwiftUI
 
 
 struct enterView_02: View {
-    @State private var path_enterView_02 = NavigationPath()
+    @Binding var path_enterView_02:NavigationPath
     @State private var student:studentInfo = studentInfo()
     @State private var progress:Int = 0
     
@@ -35,7 +35,7 @@ struct enterView_02: View {
     @State private var userMailingAccess = false
 
     var body: some View {
-        NavigationStack(path: $path_enterView_02){
+
             
             ZStack{
                 
@@ -67,7 +67,7 @@ struct enterView_02: View {
                 
                 
             }
-            
+            .navigationBarBackButtonHidden()
             .navigationDestination(for: String.self){view in
                 if view == "studentInfoCorrecr" {
                     MainViewOfStudent()
@@ -77,7 +77,7 @@ struct enterView_02: View {
                 }
                 
             }
-        }
+        
     }
     func addProgress(){
         guard progress < 3 else{
@@ -103,7 +103,7 @@ struct enterView_02: View {
 
 struct enterView_02_Previews: PreviewProvider {
     static var previews: some View {
-        enterView_02()
+        enterView_02(path_enterView_02: .constant(NavigationPath()))
     }
 }
 

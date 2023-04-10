@@ -28,13 +28,7 @@ struct enterView: View {
                             .frame(width: 343, height: 46)
                             .background(Color.black)
                             .cornerRadius(13)
-                            .foregroundColor(.white)
-//                            .border(Color.purple, width: 5)
-                            
-                     
-
-                        
-                            
+                            .foregroundColor(.white)    
                     }.padding(.top, 33)
                     Button{
                         path.append("Регистрация")
@@ -50,10 +44,16 @@ struct enterView: View {
             }
             .navigationDestination(for: String.self){view in
                 if view == "Вход" {
-                    enterView_01()
+                    enterView_01(enterView_01_path: $path)
+                }else if view == "Регистрация" {
+                    enterView_02(path_enterView_02: $path)
+                }else if view == "Вход в приложение"{
+                    MainViewOfSeller()
+                }else if view == "studentInfoCorrecr" {
+                    MainViewOfStudent()
                 }
-                else if view == "Регистрация" {
-                    enterView_02()
+                else if view == "sellerinfoCorrect" {
+                    MainViewOfSeller()
                 }
                 
             }
